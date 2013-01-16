@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Dimensions</title>
-  <meta name="viewport" content="initial-scale = 1.0, width = device-width">
+  <meta name="viewport" content="initial-scale = 1.0, minimum-scale = 1.0, maximum-scale = 1.0">
 
   <script>
     window.dimensions = {};
@@ -66,7 +66,7 @@
       <tr>
         <th scope="row">window.outer</th>
         <td><script>document.write(dimensions.head['window.outerWidth'])</script></td>
-        <td><script>document.write(dimensions.head['window.outerWidth'])</script></td>
+        <td><script>document.write(dimensions.head['window.outerHeight'])</script></td>
       </tr>
       <tr>
         <th scope="row">window.inner</th>
@@ -82,7 +82,7 @@
       <tr>
         <th scope="row">window.outer</th>
         <td><script>document.write(dimensions.body['window.outerWidth'])</script></td>
-        <td><script>document.write(dimensions.body['window.outerWidth'])</script></td>
+        <td><script>document.write(dimensions.body['window.outerHeight'])</script></td>
       </tr>
       <tr>
         <th scope="row">window.inner</th>
