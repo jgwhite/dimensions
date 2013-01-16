@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Dimensions</title>
+
+  <script>
+    window.dimensions = {};
+
+    dimensions.head = {
+      'screen.width'       : +screen.width,
+      'screen.height'      : +screen.height,
+      'window.outerWidth'  : +window.outerWidth,
+      'window.outerHeight' : +window.outerHeight,
+      'window.innerWidth'  : +window.innerWidth,
+      'window.innerHeight' : +window.innerHeight
+    }
+  </script>
+
+  <style>
+    body {
+      font: 15px/1 Monaco, monospace;
+    }
+    th {
+      font-weight: normal;
+      color: grey;
+    }
+    th[scope="col"] {
+      padding: 1em 0.5em;
+      color: lightblue;
+      text-align: right;
+    }
+    th[scope="row"],
+    td {
+      padding: 0.5em;
+      text-align: right;
+    }
+    th[scope="row"] {
+      color: lightgrey;
+    }
+  </style>
+
+</head>
+<body>
+
+  <script>
+    dimensions.body = {
+      'screen.width'       : +screen.width,
+      'screen.height'      : +screen.height,
+      'window.outerWidth'  : +window.outerWidth,
+      'window.outerHeight' : +window.outerHeight,
+      'window.innerWidth'  : +window.innerWidth,
+      'window.innerHeight' : +window.innerHeight
+    }
+  </script>
+
+  <table>
+    <tbody>
+      <tr><th colspan="3" scope="col">head</th></tr>
+      <tr>
+        <th scope="row">screen</th>
+        <td><script>document.write(dimensions.head['screen.width'])</script></td>
+        <td><script>document.write(dimensions.head['screen.height'])</script></td>
+      </tr>
+      <tr>
+        <th scope="row">window.outer</th>
+        <td><script>document.write(dimensions.head['window.outerWidth'])</script></td>
+        <td><script>document.write(dimensions.head['window.outerWidth'])</script></td>
+      </tr>
+      <tr>
+        <th scope="row">window.inner</th>
+        <td><script>document.write(dimensions.head['window.innerWidth'])</script></td>
+        <td><script>document.write(dimensions.head['window.innerHeight'])</script></td>
+      </tr>
+      <tr><th colspan="3" scope="col">body</th></tr>
+      <tr>
+        <th scope="row">screen</th>
+        <td><script>document.write(dimensions.body['screen.width'])</script></td>
+        <td><script>document.write(dimensions.body['screen.height'])</script></td>
+      </tr>
+      <tr>
+        <th scope="row">window.outer</th>
+        <td><script>document.write(dimensions.body['window.outerWidth'])</script></td>
+        <td><script>document.write(dimensions.body['window.outerWidth'])</script></td>
+      </tr>
+      <tr>
+        <th scope="row">window.inner</th>
+        <td><script>document.write(dimensions.body['window.innerWidth'])</script></td>
+        <td><script>document.write(dimensions.body['window.innerHeight'])</script></td>
+      </tr>
+      <tr><th colspan="3" scope="col">onready</th></tr>
+      <tr>
+        <th scope="row">screen</th>
+        <td id="onready-screen-width"></td>
+        <td id="onready-screen-height"></td>
+      </tr>
+      <tr>
+        <th scope="row">window.outer</th>
+        <td id="onready-window-outer-width"></td>
+        <td id="onready-window-outer-height"></td>
+      </tr>
+      <tr>
+        <th scope="row">window.inner</th>
+        <td id="onready-window-inner-width"></td>
+        <td id="onready-window-inner-height"></td>
+      </tr>
+      <tr><th colspan="3" scope="col">onload</th></tr>
+      <tr>
+        <th scope="row">screen</th>
+        <td id="onload-screen-width"></td>
+        <td id="onload-screen-height"></td>
+      </tr>
+      <tr>
+        <th scope="row">window.outer</th>
+        <td id="onload-window-outer-width"></td>
+        <td id="onload-window-outer-height"></td>
+      </tr>
+      <tr>
+        <th scope="row">window.inner</th>
+        <td id="onload-window-inner-width"></td>
+        <td id="onload-window-inner-height"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script src="jquery.js"></script>
+
+  <script>
+    $(function() {
+      $('#onready-screen-width').text(screen.width);
+      $('#onready-screen-height').text(screen.height);
+      $('#onready-window-outer-width').text(window.outerWidth);
+      $('#onready-window-outer-height').text(window.outerHeight);
+      $('#onready-window-inner-width').text(window.innerWidth);
+      $('#onready-window-inner-height').text(window.innerHeight);
+    });
+  </script>
+
+  <script>
+    $(window).on('load', function() {
+      $('#onload-screen-width').text(screen.width);
+      $('#onload-screen-height').text(screen.height);
+      $('#onload-window-outer-width').text(window.outerWidth);
+      $('#onload-window-outer-height').text(window.outerHeight);
+      $('#onload-window-inner-width').text(window.innerWidth);
+      $('#onload-window-inner-height').text(window.innerHeight);
+    });
+  </script>
+
+</body>
+</html>
